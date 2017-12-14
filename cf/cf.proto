@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package cf;
+
+
+service Greeter {
+  rpc Add (CfRequest) returns (CfReply) {}
+  rpc Del (CfRequest) returns (CfReply) {}
+}
+
+message CfRequest {
+  int64 num1 = 1;
+  int64 num2 = 2;
+}
+
+message CfReply {
+  int64 sum = 1;
+}
