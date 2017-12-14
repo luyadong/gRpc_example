@@ -8,18 +8,25 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	pb "gRpc_example/cf"
+	"google.golang.org/grpc/credentials"
 )
 
 const (
 	address     = "localhost:50051"
 	defaultNum = 20
+	cacert = "cert/ca.crt"
 )
 
 func main() {
-	// Set up a connection to the server.
-	conn, err := grpc.Dial(address, grpc.WithInsecure())
+
+	creds, err := credentials.NewClientTLSFromFile(cacert, "server.maoyan.com")
 	if err != nil {
-		log.Fatalf("did not connect: %v", err)
+		log.Fatalf("could not load tls cert: %s", err)
+	}
+
+	conn, err := grpc.Dial(address, grpc.WithTransportCredentials(creds))
+	if err != nil {
+		log.Fatalf("could not dial %s: %s", address, err)
 	}
 
 	defer conn.Close()

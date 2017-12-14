@@ -6,10 +6,13 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	pb "gRpc_example/cf"
+	"google.golang.org/grpc/credentials"
 )
 
 const (
 	port = ":50051"
+	ServerCert = "cert/server.crt"
+	ServerKey  = "cert/server.key"
 )
 
 type server struct{}
@@ -32,7 +35,13 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := grpc.NewServer()
+	creds, err := credentials.NewServerTLSFromFile(ServerCert, ServerKey)
+	if err != nil {
+		log.Fatalf("could not load TLS keys: %s", err)
+	}
+
+	s := grpc.NewServer(grpc.Creds(creds))
+
 	pb.RegisterGreeterServer(s, &server{})
 
 	if err := s.Serve(lis); err != nil {
