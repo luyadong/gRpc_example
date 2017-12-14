@@ -15,6 +15,7 @@
 
 ##### 配置GOROOT、GOPATH
 [golang下载地址][https://golang.org/dl/]
+
     *NOTE:*
 
     *GOROOT是golang安装的目录*
@@ -38,3 +39,6 @@
     生成cf.pb.go文件
 
 通过ProtoBuf在cf.pb.go中提供的接口，即可实现grpc通信。
+
+#### 附录：
+    [Protobuf3 语法指南][http://colobu.com/2017/03/16/Protobuf3-language-guide/]
