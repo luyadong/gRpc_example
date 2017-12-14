@@ -15,14 +15,14 @@
 
 ##### 配置GOROOT、GOPATH
 [golang下载地址][https://golang.org/dl/]
-  *NOTE:*
+    *NOTE:*
 
-  *GOROOT是golang安装的目录*
+    *GOROOT是golang安装的目录*
 
-  *GOPATH是project目录，执行的的GOPATH目录下一般有{bin,src,pkg}三个目录，你的代码放置在src目录下*
+    *GOPATH是project目录，执行的的GOPATH目录下一般有{bin,src,pkg}三个目录，你的代码放置在src目录下*
 
-  *多个项目时，GOPATH可以指定多个，但是每个项目用\"go get\"下载的包只在第一个指定的GOPATH路径下*
-  
+    *多个项目时，GOPATH可以指定多个，但是每个项目用\"go get\"下载的包只在第一个指定的GOPATH路径下*
+
 
 #### 配置protoc环境
     wget https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz
