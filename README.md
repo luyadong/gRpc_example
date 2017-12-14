@@ -14,7 +14,7 @@
 
 
 ##### 配置GOROOT、GOPATH
-[golang下载地址][https://golang.org/dl/]
+[golang下载地址](https://golang.org/dl)
 
     *NOTE:*
 
@@ -41,4 +41,4 @@
 通过ProtoBuf在cf.pb.go中提供的接口，即可实现grpc通信。
 
 #### 附录：
-    [ProtoBuf3 语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide/)
+    [ProtoBuf3 语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide)
