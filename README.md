@@ -41,4 +41,4 @@
 通过ProtoBuf在cf.pb.go中提供的接口，即可实现grpc通信。
 
 #### 附录：
-    [Protobuf3 语法指南][http://colobu.com/2017/03/16/Protobuf3-language-guide/]
+    [ProtoBuf3 语法指南][http://colobu.com/2017/03/16/Protobuf3-language-guide/]
