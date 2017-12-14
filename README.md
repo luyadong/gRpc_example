@@ -40,5 +40,5 @@
 通过ProtoBuf在cf.pb.go中提供的接口，即可实现grpc通信。
 
 #### 附录：
-    [golang下载地址](https://golang.org/dl)
-    [ProtoBuf3语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide)
+[golang下载地址](https://golang.org/dl)
+[ProtoBuf3语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide)
