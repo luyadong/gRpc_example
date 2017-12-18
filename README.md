@@ -8,13 +8,13 @@
     master:    简单grpc调用
     tls:       单向ssl认证
     mutli_tls: 双向ssl认证
+    simple_python_client: python语言实现的client，可以直接调用go语言的server
 
 ### Getting Started
 因为grpc是基于ProtoBuf序列化协议开发的，所以需要编写proto文件，然后通过protoc命令生成对应的pb.go文件
 
 
 ##### 配置GOROOT、GOPATH
-[golang下载地址][https://golang.org/dl/]
 
     *NOTE:*
 
@@ -25,7 +25,7 @@
     *多个项目时，GOPATH可以指定多个，但是每个项目用\"go get\"下载的包只在第一个指定的GOPATH路径下*
 
 
-#### 配置protoc环境
+#### 配置go语言protoc环境(master,tls,mutli_tls分支需要)
     wget https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz
     ./configure
     make
@@ -40,5 +40,15 @@
 
 通过ProtoBuf在cf.pb.go中提供的接口，即可实现grpc通信。
 
+
+#### 配置python语言protoc环境(simple_python_client分支需要)
+    pip install grpcio-tools --upgrade --ignore-installed
+
+    根据proto文件生成python代码(cf_pb2.py、cf_pb2_grpc.py)
+    python -m grpc_tools.protoc -I./cf --python_out=. --grpc_python_out=. cf/cf.proto
+
+
 #### 附录：
-    [ProtoBuf3 语法指南][http://colobu.com/2017/03/16/Protobuf3-language-guide/]
+[golang下载地址](https://golang.org/dl)
+
+[ProtoBuf3语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide)
