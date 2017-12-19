@@ -54,4 +54,3 @@
 [ProtoBuf3语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide)
 
 [grpc文档](https://grpc.io/docs/tutorials/basic/python.html)
-[ProtoBuf3语法指南](http://colobu.com/2017/03/16/Protobuf3-language-guide)
