@@ -8,6 +8,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	pb "gRpc_example/cf"
+	"time"
 )
 
 const (
@@ -38,7 +39,11 @@ func main() {
 
 	}
 
-	r, err := c.Add(context.Background(), &pb.CfRequest{Num1: num1, Num2:num2})
+
+	ctx, cancel := context.WithTimeout(context.Background(), 50 * time.Millisecond)
+
+	defer cancel()
+	r, err := c.Add(ctx, &pb.CfRequest{Num1: num1, Num2:num2})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
